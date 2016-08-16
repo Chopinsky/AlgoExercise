@@ -1,2 +1,2 @@
 # AlgorithmSolutions
-Solutions to various algorithm questions in Python
+This repository contains solutions to various algorithm questions in Python.

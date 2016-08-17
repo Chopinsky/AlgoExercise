@@ -17,45 +17,33 @@ def checkWord(boggle, visited, i, j, string):
     if isWord(string):
         print(string)
 
+    visited[i][j] = True
+
     if i > 0 and visited[i-1][j] == False:
-        visited[i][j] = True
         checkWord(boggle, visited, i-1, j, string)
-        visited[i][j] = False
 
     if i < height-1 and visited[i+1][j] == False:
-        visited[i][j] = True
         checkWord(boggle, visited, i+1, j, string)
-        visited[i][j] = False
 
     if j > 0 and visited[i][j-1] == False:
-        visited[i][j] = True
         checkWord(boggle, visited, i, j-1, string)
-        visited[i][j] = False
 
     if j < width-1 and visited[i][j+1] == False:
-        visited[i][j] = True
         checkWord(boggle, visited, i, j+1, string)
-        visited[i][j] = False
 
     if i > 0 and j > 0 and visited[i-1][j-1] == False:
-        visited[i][j] = True
         checkWord(boggle, visited, i-1, j-1, string)
-        visited[i][j] = False
 
     if i > 0 and j < width-1 and visited[i-1][j+1] == False:
-        visited[i][j] = True
         checkWord(boggle, visited, i-1, j+1, string)
-        visited[i][j] = False
 
     if i < height-1 and j > 0 and visited[i+1][j-1] == False:
-        visited[i][j] = True
         checkWord(boggle, visited, i+1, j-1, string)
-        visited[i][j] = False
 
     if i < height-1 and j < width-1 and visited[i+1][j+1] == False:
-        visited[i][j] = True
         checkWord(boggle, visited, i+1, j+1, string)
-        visited[i][j] = False
+
+    visited[i][j] = False
 
 
 def findAllWords(boggle):
